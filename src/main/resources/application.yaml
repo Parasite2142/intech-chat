@@ -1,0 +1,26 @@
+
+spring:
+  application:
+    name: intech-chat
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: mysecretpassword
+    url: jdbc:postgresql://localhost:5432/ic
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect=org:
+          hibernate:
+            dialect: org.hibernate.dialect.PostgreSQL10Dialect
+    generate-ddl: true
+    database: postgresql
+
+server:
+  port: 8081
+  error:
+    include-message: always
