@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Register to use chat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body class="text-center">
+<div class="form-signin">
+    <form>
+        <h1 class="h3 mb-3 fw-normal">Регистрация</h1>
+        <div class="alert alert-success" style="display: none;" id="successfulAlert">
+            Пользователь успешно зарегестрирован!
+        </div>
+        <div class="alert alert-success" style="display: none;" id="existsAlert">
+            Такой пользователь уже существует!
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="signUpUsername" placeholder="name" minlength="4" required>
+            <label for="signUpUsername">Имя пользователя</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="signUpPassword" placeholder="Password" maxlength="5" required>
+            <label for="signUpPassword">Пароль</label>
+        </div>
+        <button class="btn btn-lg btn-primary" id="signUpButton" type="button">Регистрация</button>
+    </form>
+    <a href="/login">Логин</a>
+</div>
+<script src="js/registration.js" defer></script>
+</body>
+</html>

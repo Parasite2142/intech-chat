@@ -6,7 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 
 @RequiredArgsConstructor(staticName = "create")
 public class MyUserPrincipal implements UserDetails {
@@ -14,9 +14,7 @@ public class MyUserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(
-//                new SimpleGrantedAuthority("ROLE_AUTHENTICATED")
-        );
+        return Collections.emptyList();
     }
 
     @Override

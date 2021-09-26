@@ -1,4 +1,4 @@
-package com.example.intechchat.services;
+package com.example.intechchat.security.services;
 
 import com.example.intechchat.domain.User;
 import com.example.intechchat.security.MyUserPrincipal;

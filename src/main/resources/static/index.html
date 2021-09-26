@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat WebSocket</title>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet">
+</head>
+<body onload="connect()">
+<div class="chat">
+    <div id="chat_block">
+        <div id="chat_header">
+            <p>Simple test chat</p>
+            <a class="btn btn-dark" href="/logout">Logout</a>
+        </div>
+        <div class="container-message" style="display: none">
+            <div class="message-info">
+                <div>Username</div>
+                <div>Message TIme</div>
+            </div>
+            <div>
+                MessageMessageMessageMessageMessageMessageMessage
+            </div>
+        </div>
+    </div>
+    <form class="msger-inputarea">
+        <input id="msg_input" type="text" class="msger-input" placeholder="Введите своё сообщение...">
+        <button type="button" id="send_msg_button" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+<script src="js/app.js" defer></script>
+</body>
+</html>

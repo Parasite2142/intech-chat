@@ -10,7 +10,6 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity(name = "users")
@@ -22,18 +21,17 @@ public class User {
 
 
     @Id
-    @Column(name = "id", columnDefinition = "bigserial")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", columnDefinition = "BIGSERIAL")
     private Long id;
 
     @NotNull
     @NotBlank(message = "Username can't be empty")
-    @Size(min = 4, message = "Min length is 4")
     @Column(name = "user_name")
     private String userName;
 
     @NotNull
     @NotBlank(message = "Password is required")
-    @Size(min = 5, message = "Min password length is 5")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(name = "password")
     private String password;
