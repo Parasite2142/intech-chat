@@ -1,8 +1,8 @@
 package com.example.intechchat.security.services;
 
 import com.example.intechchat.domain.User;
-import com.example.intechchat.security.MyUserPrincipal;
 import com.example.intechchat.repositories.UserRepository;
+import com.example.intechchat.security.MyUserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
