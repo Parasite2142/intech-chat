@@ -14,6 +14,8 @@ public class ChatMessage {
 
     private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
+    private String userName;
+
     private String messageBody;
 
     private String messageTime = DATE_FORMAT.format(LocalDateTime.now());

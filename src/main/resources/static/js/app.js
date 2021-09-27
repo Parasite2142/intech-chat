@@ -27,7 +27,7 @@ function showMessageOutput(messageOutput) {
     const messageTimeElement = document.createElement("div");
     const bodyElement = document.createElement("div");
 
-    userNameElement.textContent = userName;
+    userNameElement.textContent = messageOutput.userName;
     messageTimeElement.textContent = messageOutput.messageTime;
     bodyElement.textContent = messageOutput.messageBody;
 
@@ -36,6 +36,10 @@ function showMessageOutput(messageOutput) {
 
     messageElement.classList.add("container-message");
     headerElement.classList.add("message-info");
+    if (userName !== messageOutput.userName) {
+        messageElement.classList.add("right_msg");
+        headerElement.classList.add("message-info_right");
+    }
 
     messageElement.appendChild(headerElement);
     messageElement.appendChild(bodyElement);
@@ -45,7 +49,10 @@ function showMessageOutput(messageOutput) {
 
 function sendMessage() {
     if (textInputEl.value !== undefined && textInputEl.value !== null && textInputEl.value.trim() !== "") {
-        stompClient.send("/api/publish", {}, JSON.stringify({"messageBody": textInputEl.value}));
+        stompClient.send("/api/publish", {}, JSON.stringify({
+            "messageBody": textInputEl.value,
+            "userName": userName
+        }));
         textInputEl.value = "";
         textInputEl.textContent = "";
     }
